@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин ПК</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон */
+            opacity: 0.9; /* Немного прозрачности */
+            color: #ffffff; /* Темно-серый цвет текста */
+            background-image: url('61b533e8092ebcec97e1ed4aa41decca.png'); /* Фоновое изображение */
+            background-size: cover; /* Растянуть на весь экран */
+            background-repeat: no-repeat; /* Не повторять изображение */
+        }
+
+        .header {
+            background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон */
+            opacity: 0.9; /* Немного прозрачности */
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .nav-menu {
+            overflow: hidden;
+            background-color: #4cbd55; /* Зеленый цвет фона */
+            
+        }
+
+        .nav-menu a, .dropbtn {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: inherit;
+            
+        }
+
+        .nav-menu a:hover, .dropdown-content a:hover, .dropbtn:hover {
+            background-color: #4cbd55; /* Светлее зеленый для наведения */
+            color: black;
+        }
+
+        .nav-item {
+            float: left;
+            overflow: hidden;
+        }
+
+        .nav-item .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            top: 17.5%;
+            box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+            z-index: 1;
+            
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 50px 50px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            
+        }
+
+        .sub-menu {
+            position: relative;
+        }
+
+        .sub-menu .sub-content {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .sub-menu:hover .sub-content {
+            display: block;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #474747; /* Светло-серый для основного контента */
+        }
+
+        .footer {
+            background-color: #4b6e5b; /* Зеленый цвет фона для подвала */
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 97.5%;
+        }
+        .description {
+            color: #333; /* Более читаемый цвет текста */
+            font-size: 1em; /* Увеличенный размер шрифта для лучшей видимости */
+            margin-top: 10px; /* Отступ сверху */
+            line-height: 1.5; /* Увеличенный межстрочный интервал для лучшей читаемости */
+            text-align: center;
+        }
+        .about {
+            z-index: 1;
+        }
+    </style>
+    <script>
+        function addToCart(name, price, description) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, description });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} за ${price}₽ добавлен в корзину.`);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="header">
+        <h1>PCUniverse</h1>
+    </div>
+    
+    <div class="nav-menu">
+        <!-- Меню для Игровых ПК -->
+        <div class="nav-item">
+            <button class="dropbtn">Игровые ПК</button>
+            <div class="dropdown-content">
+                <!-- Игровые ПК с ценами -->
+                <div class="sub-menu">
+                    <a href="#">Оптимальные ПК</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('Optimal PC', '75000')">Добавить в корзину - 75,000₽<img src="hyperpc-one-menu-104px.jpg"width="150"></a>
+                        <p class="description">Настроенный под индивидуальные потребности, этот ПК - истинное воплощение мощи и стиля.</p>
+                        <!-- Описание и цена -->
+                    </div>
+                </div>
+                <div class="sub-menu">
+                    <a href="#">Мощные ПК</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('StrongPC', '120000')">Добавить в корзину - 120,000₽<img src="hyperpc-lumen-menu-104px.jpg"width="150"></a>
+                        <p class="description">Для тех, кто ищет максимальную производительность и графику без компромиссов.</p>
+                        <!-- Описание и цена -->
+                    </div>
+                </div>
+                <div class="sub-menu">
+                    <a href="#">Кастомные ПК</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('CustomPC UBERMOSHNO!!!', '180000')">Добавить в корзину - 180,000₽<img src="hyperpc-dynamic-concept-menu-104px.jpg"width="150"></a>
+                        <p class="description">Настроенный под индивидуальные потребности, этот ПК - истинное воплощение мощи и стиля.</p>
+                        <!-- Описание и цена -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Меню для Комплектующих -->
+        <div class="nav-item">
+            <button class="dropbtn">Комплектующие</button>
+            <div class="dropdown-content">
+                <!-- Процессоры -->
+                <div class="sub-menu">
+                    <a href="#">Процессоры</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('Intel Core i7', '35000')">Intel Core i7 - Добавить в корзину - 35,000₽<img src="sr00c-lg__13093.1555083896-1.1200x800.jpg"width="150"></a>
+                        <p class="description">Высокопроизводительный процессор для требовательных задач.</p>
+                        <a href="#" onclick="addToCart('AMD Ryzen 5', '20000', 'Оптимальное сочетание цены и производительности.')">AMD Ryzen 5 - Добавить в корзину - 20,000₽<img src="6089526906.jpg"width="150"></a>
+                        <p class="description">Оптимальное сочетание цены и производительности.</p>
+                    </div>
+                </div>
+                <!-- Видеокарты -->
+                <div class="sub-menu">
+                    <a href="#">Видеокарты</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('NVIDIA RTX 3080', '85000', 'Мощная видеокарта для игр и графических приложений.')">NVIDIA RTX 3080 - Добавить в корзину - 85,000₽</a>
+                        <a href="#" onclick="addToCart('AMD Radeon RX 6800 XT', '65000', 'Отличный выбор для геймеров и профессионалов.')">AMD Radeon RX 6800 XT - Добавить в корзину - 65,000₽</a>
+                    </div>
+                </div>
+                <!-- Жесткие диски -->
+                <div class="sub-menu">
+                    <a href="#">Жесткие диски</a>
+                    <div class="sub-content">
+                        <a href="#" onclick="addToCart('Samsung SSD 1TB', '12000', 'Надежное хранилище с высокой скоростью чтения/записи.')">Samsung SSD 1TB - Добавить в корзину - 12,000₽</a>
+                        <a href="#" onclick="addToCart('Seagate HDD 2TB', '7000', 'Большой объем для хранения данных.')">Seagate HDD 2TB - Добавить в корзину - 7,000₽</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" onclick="showContent('news')">Новости</a>
+        <a href="#" onclick="showContent('contact')">Контакты</a>
+        <a href="#" onclick="showContent('about')">О нас</a>
+        
+        <a href="cart.html">Перейти в корзину</a>
+
+        <a href="#" onclick="showContent('acc')">Выйти из аккаунта</a>
+        
+    </div>
+
+    <div class="content" id="mainContent">
+        <h2>Добро пожаловать в Магазин ПК!</h2>
+        <p>Ваш идеальный источник для поиска высокопроизводительных и настраиваемых игровых компьютеров.</p>
+    </div>
+
+    <div class="footer">
+        <p>© Магазин ПК, 2023. Все права защищены.</p>
+    </div>
+    <script>
+        function addToCart(name, description) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, description });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} добавлен в корзину.`);
+        }
+
+        function showContent(type) {
+    var contentElement = document.getElementById('mainContent');
+    if (type === 'news') {
+        contentElement.innerHTML = `
+            <h2>Новости</h2>
+            <h3>Проблема с охлаждением?</h3>
+            <p>Не беда! Только сегодня, скидка на водяные системы охлаждения от DimasikCold.</p>
+            <img src="ffd031_5498540.jpg" alt="Водяные системы охлаждения" width="500">
+        `;
+    } else if (type === 'contact') {
+        contentElement.innerHTML = '<h2>Контакты</h2><p>Свяжитесь с нами по телефону, электронной почте или через социальные сети.</p>';
+    } else if (type === 'about') {
+        contentElement.innerHTML = `
+            <h2>О нас</h2>
+            <p>Добро пожаловать в Магазин ПК - ваш источник инноваций и мастерства в мире игровых компьютеров. Основанный в 2010 году, наш магазин стремится предоставлять высококачественные, настраиваемые решения для геймеров и профессионалов. Мы верим в постоянное совершенствование, поэтому регулярно обновляем наш ассортимент, чтобы предложить вам самые современные технологии.</p>
+            <p>Наша команда - это группа опытных специалистов, которые разделяют страсть к играм и технологиям. Мы не просто продаем компьютеры - мы создаем опыт, который переносит вас в новые миры и приключения. В каждом ПК, который мы собираем, заложена часть нашего энтузиазма и заботы о клиентах.</p>
+            <p>Благодаря индивидуальному подходу и вниманию к деталям, каждый наш продукт - это шедевр, созданный с учетом ваших пожеланий и требований. От игровых машин для энтузиастов до мощных рабочих станций - Магазин ПК предлагает надежные и эффективные решения для всех.</p>
+        `;
+    }
+}
+    </script>
+</body>
+</html>

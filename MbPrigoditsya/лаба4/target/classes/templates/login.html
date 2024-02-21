@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Log in</title>
+
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <link href="css/login.css" rel="stylesheet"></link>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        #LoginForm {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .main-div {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .panel {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .form-heading {
+            color: #555;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .forgot {
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: #555;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+
+        .alert-danger {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .alert-success {
+            background-color: #5cb85c;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular-1.7.5.min.js"></script>
+
+</head>
+<body id="LoginForm">
+<div class="container">
+    <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <h2 class="form-heading">TimeTable</h2>
+                <p>Please enter your login and password</p>
+                <div th:if="${param.error}" class="alert alert-danger">Unknown username or password.</div>
+                <div th:if="${param.logout}" class="alert alert-success">Good bye!</div>
+            </div>
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login" name="login" placeholder="Login"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password"/>
+                </div>
+
+                <div class="forgot">
+                    <!--<a href="reset.html">Forgot password?</a>-->
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

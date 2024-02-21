@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Корзина</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202020;
+            color: #ffffff;
+            text-align: center; /* Центрирование содержимого */
+        }
+        .content {
+            margin: auto; /* Центрирование блока */
+            width: 60%; /* Ширина контента */
+            padding: 20px;
+            background-color: #474747;
+        }
+        .user-info {
+            background-color: #333;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #4b6e5b;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 97.5%;
+        }
+        /* Стили для модального окна истории заказов */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #000000;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ffffff;
+            width: 80%;
+        }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #4b6e5b;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .back-link, .logout-button {
+            background-color: #4b6e5b;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+        }
+
+        .back-link:hover, .logout-button:hover {
+            background-color: #3a5548;
+        }
+
+        .back-link {
+            left: 10px;
+        }
+
+        .logout-button {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">Вернуться на главную</a>
+    <a href="logout.html" class="logout-button">Выход</a> <!-- Кнопка выхода -->
+    <div class="content">
+        <!-- Блок информации о пользователе -->
+        <div class="user-info">
+            <h3>Информация о пользователе</h3>
+            <p>ФИО: Иванов Иван Иванович [ADMIN]</p>
+            <p>Адрес: ул. Ленина, д. 10, Москва, Россия</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+        </div>
+
+        <h2>Ваша корзина</h2>
+        <div id="cartItems"></div>
+        <button onclick="clearCart()">Очистить корзину</button>
+        <button onclick="placeOrder()">Оформить заказ</button>
+        <button onclick="showOrderHistory()">История заказов</button>
+    </div>
+
+    <div class="footer">
+        <p>© Магазин ПК, 2023. Все права защищены.</p>
+    </div>
+
+    <!-- Модальное окно для истории заказов -->
+    <div id="orderHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderHistory()">&times;</span>
+            <h2>История заказов</h2>
+            <button onclick="clearOrderHistory()">Очистить историю заказов</button> <!-- Новая кнопка -->
+            <div id="orderHistory"></div>
+        </div>
+    </div>
+
+    <script>
+        function getCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cartItems');
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Ваша корзина пуста</p>';
+    } else {
+        cartItemsContainer.innerHTML = ''; // Очистка предыдущих элементов
+        let total = 0;
+        cart.forEach(item => {
+            // Убедимся, что price является числом
+            let price = parseFloat(item.price);
+            if (isNaN(price)) {
+                price = 0; // Если price не число, считаем его равным 0
+            }
+
+            const div = document.createElement('div');
+            div.className = 'cart-item';
+            div.innerHTML = `<h3>${item.name} - Цена: ${item.description} руб.</p>`;
+            cartItemsContainer.appendChild(div);
+
+            total += price;
+        });
+        cartItemsContainer.innerHTML += `<p>Нажмите кнопку оформить заказ, как будете готовы.</p>`;
+    }
+    return cart; // Возвращаем товары из корзины
+}
+
+
+
+        function clearCart() {
+            localStorage.setItem('cart', JSON.stringify([])); // Очистка корзины
+            getCartItems(); // Обновление отображения
+        }
+
+        window.onload = getCartItems;
+        let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || []; // Загрузка истории заказов из localStorage
+
+        function placeOrder() {
+            const cartItems = getCartItems(); // Получаем товары из корзины
+            const orderDate = new Date().toLocaleDateString("ru-RU");
+            cartItems.forEach(item => {
+                orderHistory.push({
+                    name: item.name, // Исправлено на productName
+                    date: orderDate,
+                    status: 'Товар в доставке'
+                });
+            });
+            localStorage.setItem('orderHistory', JSON.stringify(orderHistory)); // Сохраняем историю заказов в localStorage
+            clearCart();
+            updateOrderHistoryDisplay();
+        }
+
+        function updateOrderHistoryDisplay() {
+            const historyElement = document.getElementById('orderHistory');
+            historyElement.innerHTML = '';
+            orderHistory.forEach(order => {
+                historyElement.innerHTML += `<p>${order.name} - Дата: ${order.date} - Статус: ${order.status}</p>`;
+            });
+        }
+
+        function showOrderHistory() {
+            orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || []; // Обновляем историю заказов из localStorage
+            document.getElementById('orderHistoryModal').style.display = 'block';
+            updateOrderHistoryDisplay();
+        }
+
+        function closeOrderHistory() {
+            document.getElementById('orderHistoryModal').style.display = 'none';
+        }
+
+        function clearOrderHistory() {
+    orderHistory = []; // Очищаем массив истории заказов
+    localStorage.setItem('orderHistory', JSON.stringify(orderHistory)); // Обновляем localStorage
+    updateOrderHistoryDisplay(); // Обновляем отображение
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конфигурации</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .input-form {
+            margin-top: 20px;
+        }
+        .input-field {
+            margin-bottom: 10px;
+        }
+        label, input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Таблица конфигураций</h2>
+        <table>
+            <tr>
+                <th>user_id</th>
+                <th>name</th>
+                <th>password</th>
+                <th>admin</th>
+                <th>price</th>
+                <th>configuration</th>
+                <th>components</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Иван Иванов</td>
+                <td>12345</td>
+                <td>true</td>
+                <td>1000</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <!-- Дополнительные строки данных... -->
+        </table>
+
+        <div class="input-form">
+            <div class="input-field">
+                <label for="price">Изменить цену:</label>
+                <input type="number" id="price" name="price">
+            </div>
+            <div class="input-field">
+                <label for="configuration">Изменить конфигурацию:</label>
+                <input type="text" id="configuration" name="configuration">
+            </div>
+            <button onclick="updateData()">Применить изменения</button>
+        </div>
+    </div>
+
+    <script>
+        function updateData() {
+            // Логика обновления данных
+            var price = document.getElementById('price').value;
+            var configuration = document.getElementById('configuration').value;
+
+            console.log("Цена: " + price);
+            console.log("Конфигурация: " + configuration);
+        }
+    </script>
+</body>
+</html>

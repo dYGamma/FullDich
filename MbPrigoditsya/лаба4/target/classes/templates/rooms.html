@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+
+    <title>AccRoom</title>
+
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #555;
+        }
+
+        table {
+            background-color: #fff;
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="submit"], input[type="button"] {
+            background-color: #555;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #337ab7;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script>
+        var app = angular.module('shop', []);
+        app.controller("GsApiController", function( $scope, $http){
+            $scope.getGames = function (){
+                $http.get('/gs').success(function (data, status, headers, config){
+                    $scope.Gshop = data;
+
+                    console.log($scope.Gshop)
+                }).error(function (data, status, headers, config){
+                    if (data.message === 'Time is out'){
+                        $scope.finishByTimeout();
+                        console.log('Errorrrr')
+                    }
+                });
+            };
+
+
+            $scope.delGame = function (id){
+                $http.delete('/gs/'+id).success(function (data, status, headers, config){
+                    for (var i = 0; i <$scope.Gshop.length;i++){
+                        var j = $scope.Gshop[i];
+                        if (j.id===id){
+                            $scope.Gshop.splice(i, 1);
+                            break;
+                        }
+                    }
+                }).error(function (data, status, headers, config){
+                    if (data.message === 'Time is out'){
+                        console.log('Errorrrr')
+                    }
+                });
+            };
+
+            $scope.createGame = function (){
+                $http.post('/gs', JSON.stringify({
+                    'name': $scope.name,
+                    'type': $scope.type
+                })).success(function (data, status, headers, config){
+                        console.log("successsssssssssss");
+                        console.log(data);
+                        $scope.Gshop.splice(0,0,data);
+
+                }).error(function (data, status, headers, config){
+                    if (data.message === 'Time is out'){
+                        console.log('Errorrrr')
+                    }
+                });
+            };
+
+        });
+    </script>
+</head>
+<body ng-app="shop" ng-controller="GsApiController">
+
+<div sec:authorize="isAnonymous()" >
+    <h1><a href="/login">Login</a></h1>
+</div>
+
+<div sec:authorize="isAuthenticated()">
+    <form name="logoutForm" th:action="@{/logout}" method="post">
+        <input type="submit"  class="btn btn-primary" value="Sign Out"/>
+    </form>
+</div>
+<h1>Комнаты</h1>
+<div ng-controller="getGames" ng-show="Gshop.length>0">
+    <table id ="GTable">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>ФИО</th>
+            <th>Комнаты</th>
+            <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="Game in Gshop" id ="{{game.id}}">
+            <td>{{Game.id}}</td>
+            <td>{{Game.name}}</td>
+            <td>{{Game.type}}</td>
+            <td><input type="button" value="Удалить доступ" ng-click="delGame(Gshop.indexOf(Game))"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div>
+    <form role="form" ng-submit="createGame()">
+        <div>
+            <input placeholder="ФИО" type="text" name ="name" ng-model="name" />
+            <input placeholder="Комната" type="text" name="type" ng-model="type" />
+        </div>
+        <div><input type="submit" value="Добавить доступ"></div>
+    </form>
+</div>
+
+</body>
+</html>
