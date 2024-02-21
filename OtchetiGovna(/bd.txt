@@ -1,0 +1,40 @@
+Insert into teacher(teacher_id, teacher_name, teacher_secondname) VALUES(1,'Екатерина', 'Зверева');
+Insert into teacher(teacher_id, teacher_name, teacher_secondname) VALUES(2,'Александр', 'Смирнов');
+Insert into teacher(teacher_id, teacher_name, teacher_secondname) VALUES(3,'Мария', 'Гордеева');
+Insert into teacher(teacher_id, teacher_name, teacher_secondname) VALUES(4,'Дмитрий', 'Носов');
+
+Update teacher set teacher_name = 'Александра', teacher_secondname = 'Куликова' where teacher_id = 1;
+Update teacher set teacher_name = 'Михаил', teacher_secondname = 'Сидоров' where teacher_id = 2;
+Update teacher set teacher_name = 'Елена', teacher_secondname = 'Петрова' where teacher_id = 3;
+Update teacher set teacher_name = 'Артем', teacher_secondname = 'Соловьев' where teacher_id = 4;
+
+
+Update student set student_name = 'Артем', student_secondname = 'Кузнецов' where student_id = 1;
+Update student set student_name = 'Анастасия', student_secondname = 'Смирнова' where student_id = 2;
+Update student set student_name = 'Иван', student_secondname = 'Новиков' where student_id = 3;
+Update student set student_name = 'Егор', student_secondname = 'Петров' where student_id = 4;
+Update student set student_name = 'Ольга', student_secondname = 'Иванова' where student_id = 5;
+Update student set student_name = 'Даниил', student_secondname = 'Попов' where student_id = 6;
+Update student set student_name = 'Марина', student_secondname = 'Федорова' where student_id = 7;
+Update student set student_name = 'Глеб', student_secondname = 'Кузьмин' where student_id = 8;
+Update student set student_name = 'Алена', student_secondname = 'Козлова' where student_id = 9;
+Update student set student_name = 'Павел', student_secondname = 'Макаров' where student_id = 10;
+Update student set student_name = 'Ксения', student_secondname = 'Сергеева' where student_id = 11;
+Update student set student_name = 'Никита', student_secondname = 'Ковалев' where student_id = 12;
+Update student set student_name = 'Юлия', student_secondname = 'Артемьева' where student_id = 13;
+Update student set student_name = 'Денис', student_secondname = 'Соколов' where student_id = 14;
+Update student set student_name = 'Виктория', student_secondname = 'Крылова' where student_id = 15;
+Update student set student_name = 'Григорий', student_secondname = 'Петров' where student_id = 16;
+
+
+
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(1,'Эрмитаж', 700, 1);
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(2,'Кунскамера', 500, 1);
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(3,'Мариинский театр', 450, 2);
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(4,'Адмиралтейство(верфь)', 800, 1);
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(6,'Музей истории религии', 350, 1);
+Insert into excursion (excursion_id, excursion_name, price , excursion_type_id) VALUES(5,'Зоологический музей', 500, 1);
+
+
+
+
