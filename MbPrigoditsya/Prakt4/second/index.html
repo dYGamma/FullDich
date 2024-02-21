@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое задание №5</title>
+    <!-- Подключение Bootstrap CSS (можно использовать CDN) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение внешнего скрипта -->
+    <script src="external-script.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Цель работы – приобретение навыков создания для HTML-документа внешних и внутренних скриптов на JavaScript, формирование практических навыков использования операторов и создания функций.</h1>
+
+        <!-- Внутренний скрипт №2 -->
+        <script>
+            alert("У вас есть навыки создания веб-страниц с использованием HTML и CSS?");
+        </script>
+
+        <!-- Внутренний скрипт №3 -->
+        <script>
+            // Пример приведения операндов к строковому типу
+            var groupNumber = 123; // Замените на свой номер группы
+            var message = "Моя группа: " + String(groupNumber);
+            console.log(message);
+            
+            // Допустимая ошибка (пропущена одна из скобок)
+            console.log("Приведение операндов: " + String(groupNumber));
+        </script>
+    </div>
+
+    <!-- Скрипты второй части задания -->
+    <script>
+        // Скрипт с условным оператором
+        var bmi = 25; // Замените на свой индекс массы тела
+        if (bmi < 18.5) {
+            alert("Недостаточная масса тела");
+        } else if (bmi < 24.9) {
+            alert("Нормальная масса тела");
+        } else if (bmi < 29.9) {
+            alert("Избыточная масса тела");
+        } else {
+            alert("Ожирение");
+        }
+
+        // Скрипт с унарным плюсом
+        var numString = "42";
+        var num = +numString;
+        console.log("Унарный плюс: " + num);
+    </script>
+
+    <!-- Скрипты третьей части задания -->
+    <script>
+        // Function Declaration
+        function calculateTimeFD(length, speed) {
+            var time = length / speed;
+            console.log("FD: Вы пройдете Невский проспект за " + time + " минут");
+        }
+        calculateTimeFD(5, 1); // Пример вызова
+
+        // Function Expression
+        var calculateTimeFE = function(length, speed) {
+            var time = length / speed;
+            console.log("FE: Вы пройдете Невский проспект за " + time + " минут");
+        };
+        calculateTimeFE(5, 1); // Пример вызова
+
+        // Arrow Function
+        var calculateTimeAF = (length, speed) => {
+            var time = length / speed;
+            console.log("AF: Вы пройдете Невский проспект за " + time + " минут");
+        };
+        calculateTimeAF(5, 1); // Пример вызова
+    </script>
+</body>
+</html>

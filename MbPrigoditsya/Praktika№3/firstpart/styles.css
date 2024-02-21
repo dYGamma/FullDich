@@ -1,0 +1,97 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    border-collapse: collapse;
+}
+
+/* Навигационная панель */
+header {
+    background-color: #008080; /* Темно-циановый фон */
+    color: #FFA500; /* Оранжевый текст */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Блоки с текстом и изображением */
+main {
+    background-color: #FAFAD2; /* Светло-желтый фон */
+    padding: 20px;
+    border-spacing: 10px;
+}
+
+.block {
+    flex: 1;
+    padding: 20px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px #888;
+}
+
+.center-block {
+    flex: 2;
+    text-align: left;
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+    float: none;
+    margin-right: 20px;
+}
+
+.center-block p {
+    text-align: left;
+}
+
+/* Подвал с контактной информацией */
+footer {
+    background-color: #6B8E23; /* Зеленый лес фон */
+    color: #FFFFE0; /* Светло-желтый текст */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.contact {
+    flex: 1;
+    text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .block {
+        flex: 1;
+    }
+}
