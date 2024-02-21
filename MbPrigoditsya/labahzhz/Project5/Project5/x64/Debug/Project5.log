@@ -1,0 +1,9 @@
+﻿Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Circle::Circle(void)" (??0Circle@@QEAA@XZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Circle::Circle(double,double,double)" (??0Circle@@QEAA@NNN@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Circle::Circle(class Circle const &)" (??0Circle@@QEAA@AEBV0@@Z) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Circle::~Circle(void)" (??1Circle@@QEAA@XZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: double __cdecl Circle::getX0(void)" (?getX0@Circle@@QEAANXZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: double __cdecl Circle::getY0(void)" (?getY0@Circle@@QEAANXZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: double __cdecl Circle::getR0(void)" (?getR0@Circle@@QEAANXZ) в функции main.
+Source.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl Circle::IsPointInside(double,double)" (?IsPointInside@Circle@@QEAAXNN@Z) в функции main.
+E:\laba\Project5\x64\Debug\Project5.exe : fatal error LNK1120: неразрешенных внешних элементов: 8

@@ -1,0 +1,4 @@
+﻿  Source.cpp
+E:\laba\vich22\vich22\Source.cpp(20,26): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\laba\vich22\vich22\Source.cpp(48,26): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  vich22.vcxproj -> E:\laba\vich22\x64\Debug\vich22.exe

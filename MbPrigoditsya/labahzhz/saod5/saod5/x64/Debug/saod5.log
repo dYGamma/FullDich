@@ -1,0 +1,5 @@
+﻿  Source.cpp
+E:\laba\saod5\saod5\Source.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\laba\saod5\saod5\Source.cpp(147,24): warning C4305: инициализация: усечение из "double" в "float"
+E:\laba\saod5\saod5\Source.cpp(160,11): warning C4244: /=: преобразование "float" в "int", возможна потеря данных
+  saod5.vcxproj -> E:\laba\saod5\x64\Debug\saod5.exe

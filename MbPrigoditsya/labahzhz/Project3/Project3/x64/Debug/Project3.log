@@ -1,0 +1,52 @@
+﻿  Source.cpp
+E:\laba\Project3\Project3\Source.cpp(3,5): error C2059: синтаксическая ошибка: public
+E:\laba\Project3\Project3\Source.cpp(4,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+E:\laba\Project3\Project3\Source.cpp(5,9): error C2059: синтаксическая ошибка: public
+E:\laba\Project3\Project3\Source.cpp(6,9): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+E:\laba\Project3\Project3\Source.cpp(6,9): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+E:\laba\Project3\Project3\Source.cpp(11,9): error C3381: WindowsFormsApplication1::Complex1: описатели доступа к сборке доступны только в коде, скомпилированном с параметром /clr
+E:\laba\Project3\Project3\Source.cpp(12,20): error C2062: тип "double" не требуется
+E:\laba\Project3\Project3\Source.cpp(12,28): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project3\Project3\Source.cpp(13,20): error C2062: тип "double" не требуется
+E:\laba\Project3\Project3\Source.cpp(13,28): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project3\Project3\Source.cpp(14,20): error C2062: тип "double" не требуется
+E:\laba\Project3\Project3\Source.cpp(14,28): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project3\Project3\Source.cpp(15,20): error C2062: тип "double" не требуется
+E:\laba\Project3\Project3\Source.cpp(15,30): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project3\Project3\Source.cpp(18,20): error C2146: синтаксическая ошибка: отсутствие ":" перед идентификатором "Complex1"
+E:\laba\Project3\Project3\Source.cpp(19,13): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project3\Project3\Source.cpp(26,9): error C2059: синтаксическая ошибка: public
+E:\laba\Project3\Project3\Source.cpp(26,16): error C2628: недопустимый "WindowsFormsApplication1::Complex1" с последующим "void" (возможно, отсутствует ";")
+E:\laba\Project3\Project3\Source.cpp(28,25): error C2065: Convert: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(28,42): error C2065: textBox1: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(29,25): error C2065: Convert: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(29,42): error C2065: textBox2: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(31,52): error C2661: WindowsFormsApplication1::Complex1::Complex1: нет перегруженной функции, принимающей 2 аргументов
+E:\laba\Project3\Project3\Source.cpp(35,21): error C2039: "A": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(35,25): error C2065: Math: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(35,35): error C2065: Math: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(35,52): error C2039: "a": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(35,60): error C2065: Math: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(35,77): error C2039: "b": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(36,13): error C2065: textBox3: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(36,37): error C2039: "A": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(38,21): error C2039: "KSI": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(38,28): error C2065: Math: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(38,46): error C2039: "b": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(38,58): error C2039: "a": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(38,70): error C2065: Math: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(39,13): error C2065: textBox4: необъявленный идентификатор
+E:\laba\Project3\Project3\Source.cpp(39,37): error C2039: "KSI": не является членом "WindowsFormsApplication1::Complex1".
+E:\laba\Project3\Project3\Source.cpp(10): message : см. объявление "WindowsFormsApplication1::Complex1"
+E:\laba\Project3\Project3\Source.cpp(43,9): error C2059: синтаксическая ошибка: private
+E:\laba\Project3\Project3\Source.cpp(44,9): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+E:\laba\Project3\Project3\Source.cpp(44,9): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+E:\laba\Project3\Project3\Source.cpp(49,1): error C2059: синтаксическая ошибка: }
+E:\laba\Project3\Project3\Source.cpp(49,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"

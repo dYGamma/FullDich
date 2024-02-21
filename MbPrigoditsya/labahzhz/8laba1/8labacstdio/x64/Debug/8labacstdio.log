@@ -1,0 +1,4 @@
+﻿  cstdio.cpp
+E:\laba\8laba1\8labacstdio\libs\lib.h(7,11): warning C4129: e: неизвестная escape-последовательность
+E:\laba\8laba1\8labacstdio\cstdio_files.h(54,7): warning C4101: symb: неиспользованная локальная переменная
+  8labacstdio.vcxproj -> E:\laba\8laba1\x64\Debug\8labacstdio.exe

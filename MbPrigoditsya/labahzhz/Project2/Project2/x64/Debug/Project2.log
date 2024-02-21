@@ -1,0 +1,25 @@
+﻿  Source.cpp
+E:\laba\Project2\Project2\Source.cpp(3,5): error C2059: синтаксическая ошибка: public
+E:\laba\Project2\Project2\Source.cpp(4,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+E:\laba\Project2\Project2\Source.cpp(5,9): error C2059: синтаксическая ошибка: public
+E:\laba\Project2\Project2\Source.cpp(6,9): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+E:\laba\Project2\Project2\Source.cpp(6,9): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+E:\laba\Project2\Project2\Source.cpp(12,9): error C2059: синтаксическая ошибка: public
+E:\laba\Project2\Project2\Source.cpp(13,9): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+E:\laba\Project2\Project2\Source.cpp(13,9): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+E:\laba\Project2\Project2\Source.cpp(29,9): error C2059: синтаксическая ошибка: private
+E:\laba\Project2\Project2\Source.cpp(30,9): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+E:\laba\Project2\Project2\Source.cpp(30,9): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+E:\laba\Project2\Project2\Source.cpp(38,5): error C3381: Complex1: описатели доступа к сборке доступны только в коде, скомпилированном с параметром /clr
+E:\laba\Project2\Project2\Source.cpp(39,16): error C2062: тип "double" не требуется
+E:\laba\Project2\Project2\Source.cpp(39,24): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project2\Project2\Source.cpp(40,16): error C2062: тип "double" не требуется
+E:\laba\Project2\Project2\Source.cpp(40,24): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project2\Project2\Source.cpp(41,16): error C2062: тип "double" не требуется
+E:\laba\Project2\Project2\Source.cpp(41,24): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project2\Project2\Source.cpp(42,16): error C2062: тип "double" не требуется
+E:\laba\Project2\Project2\Source.cpp(42,26): error C2238: непредвиденные лексемы перед ";"
+E:\laba\Project2\Project2\Source.cpp(45,16): error C2146: синтаксическая ошибка: отсутствие ":" перед идентификатором "Complex1"
+E:\laba\Project2\Project2\Source.cpp(46,9): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project2\Project2\Source.cpp(52,1): error C2059: синтаксическая ошибка: }
+E:\laba\Project2\Project2\Source.cpp(52,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"

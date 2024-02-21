@@ -1,0 +1,6 @@
+﻿  Source.cpp
+E:\laba\Project14\Project14\Source.cpp(105,18): warning C4477: "fprintf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "unsigned __int64"
+E:\laba\Project14\Project14\Source.cpp(105,18): message : рекомендуется использовать "%zd" в строке форматирования
+E:\laba\Project14\Project14\Source.cpp(127,24): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\laba\Project14\Project14\Source.cpp(76): warning C4715: hashTable::erase: значение возвращается не при всех путях выполнения
+  Project14.vcxproj -> E:\laba\Project14\x64\Debug\Project14.exe

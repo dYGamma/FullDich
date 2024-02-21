@@ -1,0 +1,2 @@
+'GU' hello "world"
+123 'gg' GU"AP"

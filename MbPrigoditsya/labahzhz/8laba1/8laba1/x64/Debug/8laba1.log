@@ -1,0 +1,3 @@
+﻿  fstream.cpp
+E:\laba\8laba1\8laba1\libs\lib.h(7,11): warning C4129: e: неизвестная escape-последовательность
+  8laba1.vcxproj -> E:\laba\8laba1\x64\Debug\8laba1.exe

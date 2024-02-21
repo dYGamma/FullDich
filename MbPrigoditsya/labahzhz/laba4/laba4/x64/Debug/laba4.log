@@ -1,0 +1,5 @@
+﻿  Source.cpp
+E:\laba\laba4\laba4\Source.cpp(105,18): warning C4477: "fprintf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "unsigned __int64"
+E:\laba\laba4\laba4\Source.cpp(105,18): message : рекомендуется использовать "%zd" в строке форматирования
+E:\laba\laba4\laba4\Source.cpp(127,24): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+E:\laba\laba4\laba4\Source.cpp(200): fatal  error C1075: "{": не найдена несоответствующая лексема

@@ -1,0 +1,3 @@
+﻿  Source.cpp
+E:\laba\saod666\saod666\Source.cpp(212): warning C4715: AVL_tree::search: значение возвращается не при всех путях выполнения
+  saod666.vcxproj -> E:\laba\saod666\x64\Debug\saod666.exe

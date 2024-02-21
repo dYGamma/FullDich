@@ -1,0 +1,7 @@
+﻿  Source.cpp
+E:\laba\Project30\Project30\Source.cpp(34,11): warning C4244: инициализация: преобразование "_Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=double
+          ]
+  Project30.vcxproj -> E:\laba\Project30\x64\Debug\Project30.exe

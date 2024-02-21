@@ -1,0 +1,5 @@
+﻿  Source.cpp
+E:\laba\vich33\vich33\Source.cpp(84,12): warning C4778: "printf": незавершенная строка форматирования "%.3\n"
+E:\laba\vich33\vich33\Source.cpp(84,38): warning C4474: "printf" : для строки формата передано слишком много аргументов
+E:\laba\vich33\vich33\Source.cpp(84,38): message : заполнители и их параметры ожидают переменное число аргументов в количестве 1, но было предоставлено 2
+  vich33.vcxproj -> E:\laba\vich33\x64\Debug\vich33.exe

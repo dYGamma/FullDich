@@ -1,0 +1,7 @@
+﻿  test_glut_3.cpp
+E:\laba\test_glut_3\test_glut_3\test_glut_3.cpp(57,29): warning C4305: аргумент: усечение из "double" в "GLclampf"
+E:\laba\test_glut_3\test_glut_3\test_glut_3.cpp(115,11): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+E:\laba\test_glut_3\test_glut_3\test_glut_3.cpp(120,11): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+E:\laba\test_glut_3\test_glut_3\test_glut_3.cpp(126,8): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+E:\laba\test_glut_3\test_glut_3\test_glut_3.cpp(130,8): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+  test_glut_3.vcxproj -> E:\laba\test_glut_3\x64\Debug\test_glut_3.exe

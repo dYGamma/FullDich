@@ -1,0 +1,5 @@
+﻿  Source.cpp
+E:\laba\Project24\Project24\Source.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\laba\Project24\Project24\Source.cpp(147,24): warning C4305: инициализация: усечение из "double" в "float"
+E:\laba\Project24\Project24\Source.cpp(160,11): warning C4244: /=: преобразование "float" в "int", возможна потеря данных
+  Project24.vcxproj -> E:\laba\Project24\x64\Debug\Project24.exe

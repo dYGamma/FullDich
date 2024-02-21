@@ -1,0 +1,14 @@
+﻿  Source.cpp
+E:\laba\Project11\Project11\Source.cpp(7,12): error C2062: тип "bool" не требуется
+E:\laba\Project11\Project11\Source.cpp(8,5): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(13,16): error C2062: тип "double" не требуется
+E:\laba\Project11\Project11\Source.cpp(14,9): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(24,20): error C2062: тип "double" не требуется
+E:\laba\Project11\Project11\Source.cpp(25,13): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(39,20): error C2062: тип "double" не требуется
+E:\laba\Project11\Project11\Source.cpp(40,13): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(53,20): error C2062: тип "double" не требуется
+E:\laba\Project11\Project11\Source.cpp(54,13): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(72,20): error C2062: тип "double" не требуется
+E:\laba\Project11\Project11\Source.cpp(73,13): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+E:\laba\Project11\Project11\Source.cpp(92,1): fatal error C1004: непредвиденное обнаружение конца файла
