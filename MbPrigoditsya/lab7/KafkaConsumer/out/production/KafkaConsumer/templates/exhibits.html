@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Exhibits</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <h1 th:text="#{h1_name}">Коллекция экспонатов</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th th:text="#{name_col}">Название</th>
+            <th th:text="#{year_col}">Год</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="exhibit : ${exhibits}">
+            <td th:text="${exhibit.id}"></td>
+            <td th:text="${exhibit.name}"></td>
+            <td th:text="${exhibit.year}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

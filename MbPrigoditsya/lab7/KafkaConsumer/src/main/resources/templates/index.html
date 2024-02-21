@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Title</title>
+
+</head>
+<style>
+
+    body {
+        background-color: #f0f8ff; /* голубой */
+    }
+    h1 {
+        color: #00008b; /* темно-синий */
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #00008b; /* темно-синий */
+        padding: 8px;
+        text-align: left;
+    }
+    thead {
+        background-color: #add8e6; /* светло-голубой */
+    }
+    tr:nth-child(even) {
+        background-color: #f0f8ff; /* голубой */
+    }
+    tr:nth-child(odd) {
+        background-color: #d3d3d3; /* серый */
+    }
+
+</style>
+
+<body>
+    <h1 th:text="#{h1_name}"></h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th th:text="#{first_col}"></th>
+            <th th:text="#{second_col}"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="obj : ${obj_list}">
+            <td th:text="${obj.id}"></td>
+            <td th:text="${obj.name}"></td>
+            <td th:text="${obj.type}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

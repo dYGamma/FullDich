@@ -1,0 +1,28 @@
+{
+  "name": "Moodle breaker",
+  "description": "Moodle breaker показывает ответы на образовательном ресурсе LMS ГУАП",
+  "version": "1.0.2",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Открыть меню"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://lms.guap.ru/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "/Icons/icon.png",
+    "96": "/Icons/icon@2x.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}

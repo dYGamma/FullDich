@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ компьютерной техники</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 60%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        textarea,
+        input[type="password"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+        
+        .error-message {
+            color: red;
+        }
+        
+        .success-message {
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Заказ компьютерной техники</h1>
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Адрес доставки:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Тип компьютера:</label>
+                <div>
+                    <input type="radio" id="laptop" name="computer-type" value="laptop">
+                    <label for="laptop">Ноутбук</label>
+                </div>
+                <div>
+                    <input type="radio" id="desktop" name="computer-type" value="desktop">
+                    <label for="desktop">Стационарный компьютер</label>
+                </div>
+                <p class="error-message" id="computer-type-error"></p>
+            </div>
+            
+            <div class="form-group">
+                <label>Дополнительные опции:</label>
+                <div>
+                    <input type="checkbox" id="mouse" name="options" value="mouse">
+                    <label for="mouse">Мышь</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="keyboard" name="options" value="keyboard">
+                    <label for="keyboard">Клавиатура</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="monitor" name="options" value="monitor">
+                    <label for="monitor">Монитор</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="computer-model">Модель компьютера:</label>
+                <select id="computer-model" name="computer-model" required>
+                    <option value="model1">Модель "Обычная"</option>
+                    <option value="model2">Модель "С RGB подсветкой"</option>
+                    <option value="model3">Модель "C авторским корпусом"</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="delivery-date">Дата доставки:</label>
+                <input type="date" id="delivery-date" name="delivery-date" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Отправить заказ</button>
+            </div>
+        </form>
+        <p class="success-message" id="success-message"></p>
+    </div>
+    <script>
+        function validateForm() {
+            var computerType = document.querySelector('input[name="computer-type"]:checked');
+            var computerTypeError = document.getElementById("computer-type-error");
+            
+            if (!computerType) {
+                computerTypeError.innerHTML = "Выберите тип компьютера";
+                return false;
+            } else {
+                computerTypeError.innerHTML = "";
+                var successMessage = document.getElementById("success-message");
+                successMessage.innerHTML = "Заказ успешно отправлен!";
+                setTimeout(function () {
+                    successMessage.innerHTML = "";
+                }, 3000); // Очистить сообщение через 3 секунды
+                document.getElementById("name").value = "";
+                document.getElementById("address").value = "";
+                document.getElementById("password").value = "";
+                document.getElementById("laptop").checked = false;
+                document.getElementById("desktop").checked = false;
+                document.getElementById("mouse").checked = false;
+                document.getElementById("keyboard").checked = false;
+                document.getElementById("computer-model").value = "model1";
+                document.getElementById("delivery-date").value = "";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/5.3.2/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" style="margin-left: 30px">
+            <a class="nav-item nav-link bg-dark" href="/">Просмотр</a>
+            <a class="nav-item nav-link bg-dark" href="/add">Добавление</a>
+            <a class="nav-item nav-link bg-dark" href="/edit">Изменение</a>
+            <a class="nav-item nav-link bg-dark" href="/delete">Удаление</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 500px; margin-top:30px">
+    <div class="starter-template">
+        <h1>Добавление</h1>
+
+        <div class="form_container">
+            <div id="message"></div>
+            <form id="form">
+                <label>Введите имя:</label><br>
+                <input type="text" name="username"><br><br>
+                <label>Введите имя комнаты:</label><br>
+                <input type="text" name="roomName"><br><br>
+                <label>Выберите: есть доступ, или нет</label>
+                <input type="checkbox" name="accessToRoom"><br><br>
+                <button type="button" class="btn btn-dark">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="webjars/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            let username = $('input[name=username]').val();
+            let roomName = $('input[name=roomName]').val();
+            let accessToRoom = ($('[name="accessToRoom"]').is(':checked')) ? 1 : 0;
+            $.ajax({
+                method: 'POST',
+                contentType: "application/json",
+                url: "/api/access-to-room",
+                dataType: 'json',
+                data: JSON.stringify({username: username, roomName: roomName, accessToRoom: accessToRoom}),
+                success: function (data) {
+                    console.log("SUCCESS : ", data);
+                },
+                error: function (e) {
+                    console.log("ERROR : ", e);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
