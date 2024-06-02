@@ -1,0 +1,14 @@
+release/customerdialog.o
+release/dbmanager.o
+release/dealershipdialog.o
+release/main.o
+release/mainwindow.o
+release/manufacturerdialog.o
+release/saledialog.o
+release/vehicledialog.o
+release/moc_customerdialog.o
+release/moc_dealershipdialog.o
+release/moc_mainwindow.o
+release/moc_manufacturerdialog.o
+release/moc_saledialog.o
+release/moc_vehicledialog.o
